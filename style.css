@@ -1,3 +1,9 @@
+body {
+  background-image: url('./img/mrt-img.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.8;
+}
 .header {
   background-color: lightblue;
   padding: 15px 30px;
@@ -5,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .logo-img {
   height: 100px;
   width: 120px;
@@ -14,7 +21,41 @@
   background-color: rgb(60, 201, 194);
   color: aliceblue;
   font-size: 25px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 120px;
   height: 40px;
+}
+.no-visits-info {
+  font-size: 22px;
+  text-align: center;
+  color: brown;
+}
+.form {
+  margin: auto;
+  width: 300px;
+  height: 250px;
+  border: 2px solid lightgreen;
+  border-radius: 15px;
+  /* background-image: url('./img/brain-img.jpg'); */
+  /* background-repeat: no-repeat;
+  background-size: 100%; */
+
+  box-sizing: border-box;
+  padding: 25px;
+  text-align: center;
+}
+.input-login {
+  width: 200px;
+  height: 55px;
+  border-radius: 8px;
+  border: 1px solid lightblue;
+  margin-bottom: 20px;
+}
+
+.input-submit {
+  width: 200px;
+  height: 55px;
+  border: 1px solid lightblue;
+  border-radius: 8px;
+  background-color: rgb(60, 201, 194);
 }
