@@ -21,9 +21,13 @@ body {
   background-color: rgb(60, 201, 194);
   color: aliceblue;
   font-size: 25px;
-  border-radius: 10px;
+  border-radius: 10px solid white;
   width: 120px;
   height: 40px;
+}
+.button-login:hover {
+  background-color: lightskyblue;
+  color: chartreuse;
 }
 .no-visits-info {
   font-size: 22px;
@@ -58,4 +62,8 @@ body {
   border: 1px solid lightblue;
   border-radius: 8px;
   background-color: rgb(60, 201, 194);
+}
+.status {
+  color: aqua;
+  font-size: 20px;
 }

@@ -4,7 +4,6 @@ const modalDiv = document.querySelector('.modal');
 console.log(modalDiv);
 const btn = document.querySelector('.button-login');
 console.log(btn);
-// let form;
 
 class Modal {
   createModalForm() {
@@ -33,7 +32,8 @@ class LoginForm extends Modal {
     inputSubmit.setAttribute('type', 'submit');
     inputSubmit.setAttribute('value', 'Submit');
     this.form.appendChild(inputSubmit);
-    // inputSubmit.addEventListener('click', async function () {
+
+    // addEventListener('click', async function () {
     //   let url = 'http://cards.danit.com.ua/login';
     //   let response = await fetch(url);
     //   let text = response.text();
@@ -43,19 +43,48 @@ class LoginForm extends Modal {
 }
 
 const loginModal = new LoginForm();
-
+let counter = 0;
 btn.addEventListener('click', function (e) {
-  e.preventDefault();
-  loginModal.createModalForm();
-  loginModal.loginAreas();
+  if (counter) {
+    console.log('we have modal');
+  } else {
+    e.preventDefault();
+    loginModal.createModalForm();
+    loginModal.loginAreas();
+    counter++;
+  }
 });
 
-//   // checkInputs() {
-//   //   if (form === '') {
-//   //     console.log(form);
-//   //     const spanEnter = document.createElement('span');
-//   //     spanEnter.textContent = 'Enter email and password';
-//   //     form.appendChild(spanEnter);
-//   //   }
-//   // }
-// }
+// 123123@gmail.com.ua
+// 11111
+// tocken fe87f221-bd9c-4bff-a3cb-c9098b24c339
+
+// obj = {
+//   inputEmailValue: this.inputEmail.value,
+//   inputPasswordValue: this.inputPassword.value,
+// };
+
+const url = 'https://ajax.test-danit.com/api/cards/login';
+const forms = () => {
+  const message = {
+    loading: 'Звгрузка...',
+    success: 'С вами скоро свяжутся',
+    failure: 'Что-то пошло не так',
+  };
+};
+LoginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let statusMessage = document.createElement('div');
+  statusMessage.classList.add('status');
+  modalDiv.appendChild('statusMessage');
+});
+
+const formData = new FormData();
+const postLoginForm = async (url, formData) => {
+  let res = await fetch(url, {
+    method: 'POST',
+    body: 'formData',
+  });
+
+  return await res.text();
+};
